@@ -18,9 +18,24 @@ NOTES: Don't create new string , Dont return anything ,you have been given two p
 */
 
 #include <stddef.h>
+#include<stdio.h>
 
 
 void count_vowels_and_consonants(char *str,int *consonants, int *vowels){
+	int i;
+	*consonants = 0;
+	*vowels = 0;
+	if ((str != '\0') || (str != NULL))
+	{
+
+		for (i = 0; str[i] != '\0'; i++)
+		{
+			if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
+				*vowels += 1;
+			else if ((str[i] >= 'a'&& str[i] <= 'z') || (str[i] >= 'A'&& str[i] <= 'Z'))
+				*consonants += 1;
+		}
+	}
 
 
 }
